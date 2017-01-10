@@ -1,0 +1,22 @@
+{
+  "name": "alabaster",
+  "authors": [
+    "Thane Thomson <connect@thanethomson.com>"
+  ],
+  "description": "Statik theme based on the Alabaster theme for Sphinx",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://getstatik.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
