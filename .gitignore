@@ -1,0 +1,14 @@
+/bin/
+/lib/
+/include/
+.Python
+*.pyc
+*.bak
+*.swp
+pip-selfcheck.json
+/public/
+/deploy/bin/
+/deploy/lib/
+/deploy/include/
+/backups
+jquery/
