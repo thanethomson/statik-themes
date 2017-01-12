@@ -1,2 +1,5 @@
 path: /
-template: home
+template: topic
+context:
+  dynamic:
+    topic: session.query(Topic).filter(Topic.pk=="home").all()[0]

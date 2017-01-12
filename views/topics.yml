@@ -1,0 +1,5 @@
+path:
+  template: /{{ topic.pk }}/
+  for-each:
+    topic: session.query(Topic).all()
+template: topic

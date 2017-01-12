@@ -1,3 +1,21 @@
 project-name: Statik Theme Test
-base: /
+base: /alabaster/
 theme: alabaster
+markdown:
+  permalinks:
+    enabled: true
+    title: Permalink to this heading
+    class: headerlink
+context:
+  static:
+    page-title: Statik Alabaster Theme Demo
+    site-description: |
+      Theme demo site for Statik, the static web site generator for developers. Based on the
+      <a href="http://alabaster.readthedocs.io/en/latest/">Alabaster</a> theme for Sphinx.
+    theme-name: Alabaster
+    theme-description: |
+      Alabaster theme, based on the Alabaster theme for Sphinx and
+      adapted for use with Statik.
+    github_url: https://github.com/thanethomson/statik-themes
+  dynamic:
+    topics: session.query(Topic).order_by(Topic.order).all()
