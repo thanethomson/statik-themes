@@ -1,5 +1,5 @@
 project-name: Statik Theme Test
-base: /alabaster/
+base-path: /alabaster/
 theme: alabaster
 markdown:
   permalinks:
