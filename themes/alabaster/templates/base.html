@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="Description" content="{{ site_description|striptags }}" />
     <title>{% block pagetitle %}{{ page_title }}{% endblock %}</title>
-    <!--[if IE]><link rel="shortcut icon" href="{% asset "favicon.ico" %}" /><![endif]-->
-    <link rel="icon" href="{% asset "favicon.png" %}" />
+    {% block favicon %}<!--[if IE]><link rel="shortcut icon" href="{% asset "favicon.ico" %}" /><![endif]-->
+    <link rel="icon" href="{% asset "favicon.png" %}" />{% endblock %}
     <link rel="stylesheet" type="text/css" href="{% asset "alabaster/css/alabaster.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% asset "highlight/styles/default.css" %}" />
+    {% block additional_styles %}{% endblock %}
 </head>
 <body role="document">
     {% if github_url %}
@@ -24,13 +25,15 @@
             <div class="sphinxsidebarwrapper">
                 <h1 class="logo"><a href="{% url "home" %}">Statik</a></h1>
                 <p class="blurb">
-                    {{ site_description }}
+                    {% block description %}
+                        {{ site_description }}
+                    {% endblock %}
                 </p>
 
                 <p>&nbsp;</p>
 
-                <h3>Navigation</h3>
                 {% block navigation %}
+                    <h3>Navigation</h3>
                     <ul>
                         {% for topic in topics %}
                             <li class="toctree-l1">
@@ -54,11 +57,14 @@
     </div>
 
     <div class="footer">
-        Generated using <a href="https://getstatik.com">Statik</a>
+        {% block footer %}
+            Generated using <a href="https://getstatik.com">Statik</a>
+        {% endblock %}
     </div>
 
     <script type="text/javascript" src="{% asset "jquery/dist/jquery.min.js" %}"></script>
     <script type="text/javascript" src="{% asset "highlight/highlight.pack.js" %}"></script>
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    {% block additional_scripts %}{% endblock %}
 </body>
 </html>
